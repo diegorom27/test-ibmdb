@@ -17,7 +17,7 @@ COPY .env .env
 COPY . .
 
 # Expone el puerto en el que la aplicación se ejecutará
-EXPOSE 5000
+EXPOSE 3000
 
 # Define el comando para ejecutar la aplicación
 CMD ["npm", "start"]
