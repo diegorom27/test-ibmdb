@@ -1,0 +1,53 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger Db2 WA Extensions",
+    "description": "This is a Swagger Connecting WA to a Db2 using Code Engine",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://test-ibmdb.1j5airznz0ta.us-south.codeengine.appdomain.cloud",
+      "description": "Dallas, USA"
+    }
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "parameters": [],
+        "summary": "sql inyection",
+        "description": "Allow to send a query to a DB2 instance",
+        "operationId": "getBusInfo",
+        "requestBody": {
+          "description": "sql sentence",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sql": {
+                    "type": "string",
+                    "description": "sql query"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
